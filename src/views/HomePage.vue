@@ -17,7 +17,6 @@ import axios from 'axios';
         HeaderComponent
     },
     methods: {
-        
         //return the token from spotify api
         getArtistToken(){
             return axios.post("https://accounts.spotify.com/api/token", 
@@ -34,11 +33,11 @@ import axios from 'axios';
                     console.log(error.message);
                     return error;
                 }).then( response=>{
-                    console.log(response.data.access_token);
+                    // console.log(response.data.access_token);
                     this.token =  response.data.access_token;
                 });
         },
-
+        
         async getArtistInfo(){
             const token = await this.getArtistToken();
             
@@ -56,7 +55,6 @@ import axios from 'axios';
         }
     },
     mounted(){
-        // console.log("mounted attivato");
         this.getArtistInfo();
     }
     
@@ -64,8 +62,8 @@ import axios from 'axios';
 </script>
 
 <template>
-  <HeaderComponent></HeaderComponent>
-  {{ artistInfo ?? errorMessage}}
+  <HeaderComponent :artistInfo = this.artistInfo></HeaderComponent>
+  
 </template>
 
 <style scoped>
