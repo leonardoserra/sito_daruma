@@ -63,7 +63,6 @@ import axios from 'axios';
 
 <template>
   <HeaderComponent :artistInfo = this.artistInfo></HeaderComponent>
-  
 </template>
 
 <style scoped>

@@ -8,17 +8,17 @@ export default {
 </script>
 
 <template>
-  <div class="header">
-    <div v-if="artistInfo" class="title">
-        {{ artistInfo.type }}<br/>
-        {{ artistInfo.name }}
-    </div>
-    <div v-if="artistInfo" class="img-frame">
-        <a :href="artistInfo.external_urls.spotify">
-            <img :src="artistInfo.images[2].url">
-        </a>
-    </div>
-  </div>
+    <header class="header">
+        <div v-if="artistInfo" class="title">
+            {{ artistInfo.type }}<br/>
+            {{ artistInfo.name }}
+        </div>
+        <div v-if="artistInfo" class="img-frame">
+            <a :href="artistInfo.external_urls.spotify">
+                <img :src="artistInfo.images[2].url">
+            </a>
+        </div>
+    </header>
 </template>
 
 <style scoped lang="scss">
