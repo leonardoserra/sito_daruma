@@ -8,7 +8,6 @@ import axios from 'axios';
     data() {
         return {
             name: "PROVA",
-            token: "",
             artistInfo: null,
             artistId: "6zUJZaqND4ZduOsIXRH8Sb",
             errorMessage: ""
@@ -19,6 +18,7 @@ import axios from 'axios';
     },
     methods: {
         
+        //return the token from spotify api
         getArtistToken(){
             return axios.post("https://accounts.spotify.com/api/token", 
                 {
@@ -39,14 +39,9 @@ import axios from 'axios';
                 });
         },
 
-        getArtistInfo(token){
-            console.log("provo a stampare");
+        async getArtistInfo(){
+            const token = await this.getArtistToken();
             
-            if(token.message){
-                this.errorMessage = token.message;
-                return;
-            }
-            console.log(token);
             axios.get(`https://api.spotify.com/v1/artists/${this.artistId}`,{
                 headers:{
                     "Authorization": `Bearer ${this.token}`
@@ -60,16 +55,9 @@ import axios from 'axios';
             });
         }
     },
-    props: {
-
-    },
     mounted(){
         // console.log("mounted attivato");
-        this.getArtistToken();
-        console.log(this.token);
-    },
-    updated(){
-        this.getArtistInfo(this.token);
+        this.getArtistInfo();
     }
     
 }
