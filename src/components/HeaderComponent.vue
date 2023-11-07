@@ -26,7 +26,7 @@ export default {
         display: flex;
         justify-content: space-between;
         background-color:#1fdf64;  
-        // height: 200px;
+        height: 110px;
         padding: 5px 10px;
         .title{
             align-self: center;
