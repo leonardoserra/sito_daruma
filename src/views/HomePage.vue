@@ -8,7 +8,10 @@ import axios from 'axios';
     data() {
         return {
             name: "PROVA",
-            artistInfo: []
+            token: "",
+            artistInfo: null,
+            artistId: "6zUJZaqND4ZduOsIXRH8Sb",
+            errorMessage: ""
         }
     },
     components:{
@@ -17,8 +20,7 @@ import axios from 'axios';
     methods: {
         
         getArtistToken(){
-
-            axios.post("https://accounts.spotify.com/api/token", 
+            return axios.post("https://accounts.spotify.com/api/token", 
                 {
                     grant_type:"client_credentials",
                     client_id: "998481fea10a46fc9478a6c2a4ef75ff",
@@ -30,23 +32,44 @@ import axios from 'axios';
                 }
                 }).catch(error =>{
                     console.log(error.message);
-                    return error.message;
+                    return error;
                 }).then( response=>{
                     console.log(response.data.access_token);
-                    return response.data.access_token;
+                    this.token =  response.data.access_token;
                 });
-
         },
-        getArtistInfo(){
-            const token = this.getArtistToken();
+
+        getArtistInfo(token){
+            console.log("provo a stampare");
+            
+            if(token.message){
+                this.errorMessage = token.message;
+                return;
+            }
+            console.log(token);
+            axios.get(`https://api.spotify.com/v1/artists/${this.artistId}`,{
+                headers:{
+                    "Authorization": `Bearer ${this.token}`
+                }
+            }).catch(error=>{
+                console.log(error.message);
+                return error.message;
+            }).then(response=>{
+                console.log(response.data);
+                this.artistInfo = response.data;
+            });
         }
     },
     props: {
 
     },
     mounted(){
-        console.log("STAMPA");
-        // this.getArtistToken();
+        // console.log("mounted attivato");
+        this.getArtistToken();
+        console.log(this.token);
+    },
+    updated(){
+        this.getArtistInfo(this.token);
     }
     
 }
@@ -54,6 +77,7 @@ import axios from 'axios';
 
 <template>
   <HeaderComponent></HeaderComponent>
+  {{ artistInfo ?? errorMessage}}
 </template>
 
 <style scoped>
