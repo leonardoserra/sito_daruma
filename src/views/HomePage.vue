@@ -24,7 +24,7 @@ MainComponent
     methods: {
         //return the token from spotify api
         getArtistToken(){
-             return axios.post("https://accounts.spotify.com/api/token", 
+            return axios.post("https://accounts.spotify.com/api/token", 
                 {
                     grant_type:"client_credentials",
                     client_id: "998481fea10a46fc9478a6c2a4ef75ff",
@@ -32,8 +32,8 @@ MainComponent
                 }, 
                 {
                     headers:{
-                    "Content-Type": "application/x-www-form-urlencoded"
-                }
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
                 }).catch(error =>{
                     console.log(error.message);
                     this.artistErrorMessage = error.message;
@@ -61,10 +61,13 @@ MainComponent
         },
 
         async getArtistAlbums(){
+
             await this.getArtistToken();
-            
             axios.get(`https://api.spotify.com/v1/artists/${this.artistId}/albums`,
             {
+                params:{
+                    limit: 50
+                },
                 headers:{
                     "Authorization": `Bearer ${this.token}`
                 }
@@ -82,7 +85,6 @@ MainComponent
         this.getArtistInfo();
         this.getArtistAlbums();
     }
-    
 }
 </script>
 

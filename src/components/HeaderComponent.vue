@@ -51,6 +51,11 @@ export default {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                box-shadow: 0px 0px #888888;
+                transition: all .3s ease-in-out; 
+                &:hover{ 
+                    box-shadow: 0 0  20px #7efead;
+                }
             }
         }
     }
