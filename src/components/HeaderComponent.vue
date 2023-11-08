@@ -13,6 +13,9 @@ export default {
             {{ artistInfo.type }}<br/>
             {{ artistInfo.name }}
         </div>
+        <div v-else>
+            ARTIST
+        </div>
         <div v-if="artistInfo" class="img-frame">
             <a :href="artistInfo.external_urls.spotify">
                 <img :src="artistInfo.images[2].url">
