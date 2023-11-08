@@ -43,14 +43,15 @@ export default{
 main::-webkit-scrollbar {
         display: none;
     }
+
 main{
-   
     height: calc(100vh - 110px);
     margin-top: 110px;
-    background-color: aqua;
     overflow-y: scroll;
+    background-color: rgb(252, 255, 168);
     .label{
         text-align: center;
+        font-size: 3rem;
     }
     .container{
         padding: 20px 20px 30px 20px;
@@ -61,16 +62,33 @@ main{
         flex-wrap: wrap;
         width: 1400px;
         height: 100%;
-        background-color: rgb(255, 247, 0);
+        background-color: aqua;
         .card{
-            margin: 10px 0 10px 0;
+            margin: 15px 0 10px 0;
             min-width: calc(100% / 3 - 50px);
             text-align: center;
-            background-color: beige;
+            .name{
+                height: 30px;
+                transition: all .3s ease-in-out;
+                color: black; 
+                &:hover{ 
+                    font-size: 1.5rem;
+                    transform: translateY(-10px);
+                }
+            }
            .link{
-            text-decoration: none;
-            color: red;
-           }
+                text-decoration: none;
+            }
+           .image{
+                box-shadow: 5px 10px #888888;
+                transition: all .3s ease-in-out; 
+                &:hover{ 
+                    
+                    transform: scale(1.2);
+                    box-shadow: 10px 15px 12px #d26565;
+
+                }
+            }
         }
     }
 }
