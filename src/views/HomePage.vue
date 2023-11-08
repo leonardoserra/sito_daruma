@@ -2,6 +2,7 @@
 import HeaderComponent from '../components/HeaderComponent.vue';
 import MainComponent from '../components/MainComponent.vue';
 import axios from 'axios';
+import {store} from '../store'
 MainComponent
 
   export default {
@@ -9,6 +10,7 @@ MainComponent
 
     data() {
         return {
+            store,
             artistId: "6zUJZaqND4ZduOsIXRH8Sb",
             token: null,
             artistAlbums: null,
@@ -27,8 +29,8 @@ MainComponent
             return axios.post("https://accounts.spotify.com/api/token", 
                 {
                     grant_type:"client_credentials",
-                    client_id: "998481fea10a46fc9478a6c2a4ef75ff",
-                    client_secret: "8332585bb2e0426f878d6f5cca316e20"
+                    client_id: store.client_id,
+                    client_secret: store.client_secret
                 }, 
                 {
                     headers:{

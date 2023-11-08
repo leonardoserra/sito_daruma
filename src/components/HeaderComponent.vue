@@ -46,15 +46,20 @@ export default {
             align-self: center;
             width: 100px;
             height: 100px;
+            
             img{
                 border-radius: 50%;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                box-shadow: 0px 0px #888888;
-                transition: all .3s ease-in-out; 
-                &:hover{ 
-                    box-shadow: 0 0  20px #7efead;
+                box-shadow: 0px 0px #55ff93;
+                transition: all .8s ease-in-out; 
+                border: solid 1px rgb(36, 242, 9);
+
+                &:active{ 
+                    border: solid 5px rgb(36, 242, 9);
+                    box-shadow: 0 0 20px #55fe93;
+                    transform: rotateY( -360deg );
                 }
             }
         }

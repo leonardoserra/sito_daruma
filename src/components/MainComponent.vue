@@ -21,7 +21,11 @@ export default{
 <template>
     <main>
         <section class="section">
-            <h1 class="label">ALBUM</h1>
+            <h1 class="label">
+                <em>
+                    Album
+                </em>
+           </h1>
             <div v-if="artistAlbums" class="container">
                 <div v-for="(album,index) in artistAlbums.items" :key="index" class="card">
                         <a class="link" :href="album.external_urls.spotify" target="_blank">
@@ -52,6 +56,8 @@ main{
     .label{
         text-align: center;
         font-size: 3rem;
+        color:#ff0000;
+        text-shadow: 0px 0px 20px #ffb1b1;
     }
     .container{
         padding: 20px 20px 30px 20px;
@@ -71,22 +77,22 @@ main{
                 height: 30px;
                 transition: all .3s ease-in-out;
                 color: black; 
+                
                 &:hover{ 
-                    font-size: 1.5rem;
-                    transform: translateY(-10px);
+                    font-size: 1.1rem;
+                    // transform: translateX(-10px);
                 }
             }
            .link{
                 text-decoration: none;
             }
            .image{
-                box-shadow: 5px 10px #888888;
+                border-radius: 5px;
+                box-shadow: 0px 0px #191919;
                 transition: all .3s ease-in-out; 
                 &:hover{ 
-                    
-                    transform: scale(1.2);
-                    box-shadow: 10px 15px 12px #d26565;
-
+                    transform:translate(5px,-5px);
+                    box-shadow: -10px 10px #191919;
                 }
             }
         }
