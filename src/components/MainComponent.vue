@@ -40,9 +40,15 @@ export default{
 </template>
 
 <style scoped lang="scss">
+main::-webkit-scrollbar {
+        display: none;
+    }
 main{
-    // height: calc(100vh - 110px);
+   
+    height: calc(100vh - 110px);
+    margin-top: 110px;
     background-color: aqua;
+    overflow-y: scroll;
     .label{
         text-align: center;
     }

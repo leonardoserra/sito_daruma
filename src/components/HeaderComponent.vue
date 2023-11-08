@@ -26,6 +26,11 @@ export default {
 
 <style scoped lang="scss">
     .header{
+        position: fixed;
+        top:0;
+        left: 0;
+        z-index: 1000;
+        width: 100vw;
         display: flex;
         justify-content: space-between;
         background-color:#1fdf64;  

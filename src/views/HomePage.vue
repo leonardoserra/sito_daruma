@@ -87,11 +87,14 @@ MainComponent
 </script>
 
 <template>
-    <HeaderComponent 
+    <body>
+        
+    </body>
+    <HeaderComponent
         :artistInfo = artistInfo>
     </HeaderComponent>
     
-    <MainComponent 
+    <MainComponent
         :artistInfo = artistInfo 
         :artistAlbums = artistAlbums 
         :artistId = artistId>
