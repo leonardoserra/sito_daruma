@@ -10,9 +10,11 @@ MainComponent
     data() {
         return {
             artistId: "6zUJZaqND4ZduOsIXRH8Sb",
+            token: null,
             artistAlbums: null,
             artistInfo: null,
-            errorMessage: ""
+            artistErrorMessage: "",
+            albumsErrorMessage: ""
         }
     },
     components:{
@@ -22,7 +24,7 @@ MainComponent
     methods: {
         //return the token from spotify api
         getArtistToken(){
-             axios.post("https://accounts.spotify.com/api/token", 
+             return axios.post("https://accounts.spotify.com/api/token", 
                 {
                     grant_type:"client_credentials",
                     client_id: "998481fea10a46fc9478a6c2a4ef75ff",
@@ -34,15 +36,15 @@ MainComponent
                 }
                 }).catch(error =>{
                     console.log(error.message);
-                    return error;
+                    this.artistErrorMessage = error.message;
                 }).then( response=>{
                     // console.log(response.data.access_token);
-                    return response.data.access_token;
+                    this.token =  response.data.access_token;
                 });
         },
         
         async getArtistInfo(){
-            const token = await this.getArtistToken();
+            await this.getArtistToken();
             
             axios.get(`https://api.spotify.com/v1/artists/${this.artistId}`,{
                 headers:{
@@ -50,17 +52,19 @@ MainComponent
                 }
             }).catch(error=>{
                 console.log(error.message);
-                return error.message;
+                this.albumsErrorMessage = error.message;
             }).then(response=>{
+                console.log("ARTIST");
                 console.log(response.data);
                 this.artistInfo = response.data;
             });
         },
 
         async getArtistAlbums(){
-            const token = await this.getArtistToken();
+            await this.getArtistToken();
             
-            axios.get(`https://api.spotify.com/v1/artists/${this.artistId}/albums`,{
+            axios.get(`https://api.spotify.com/v1/artists/${this.artistId}/albums`,
+            {
                 headers:{
                     "Authorization": `Bearer ${this.token}`
                 }
@@ -68,6 +72,7 @@ MainComponent
                 console.log(error.message);
                 return error.message;
             }).then(response=>{
+                console.log("ALBUM");
                 console.log(response.data);
                 this.artistAlbums = response.data;
             });
