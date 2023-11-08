@@ -17,7 +17,7 @@ export default {
             ARTIST
         </div>
         <div v-if="artistInfo" class="img-frame">
-            <a :href="artistInfo.external_urls.spotify">
+            <a :href="artistInfo.external_urls.spotify" target="_blank">
                 <img :src="artistInfo.images[2].url">
             </a>
         </div>

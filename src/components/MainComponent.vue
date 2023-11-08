@@ -24,7 +24,7 @@ export default{
             <h1 class="label">ALBUM</h1>
             <div v-if="artistAlbums" class="container">
                 <div v-for="(album,index) in artistAlbums.items" :key="index" class="card">
-                        <a class="link" :href="album.external_urls.spotify">
+                        <a class="link" :href="album.external_urls.spotify" target="_blank">
                             <h4 class="name">
                                 {{ album.name }}
                             </h4>
