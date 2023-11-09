@@ -21,9 +21,11 @@ export default{
 <template>
     <main>
         <section class="section">
-            <h1 class="label">
+            <h1 >
                 <em>
-                    Album
+                    <span class="label">
+                        Album
+                    </span>
                 </em>
            </h1>
             <div v-if="artistAlbums" class="container">
@@ -49,26 +51,36 @@ main::-webkit-scrollbar {
     }
 
 main{
+    position: relative;
     height: calc(100vh - 110px);
     margin-top: 110px;
     overflow-y: scroll;
-    background-color: rgb(252, 255, 168);
+    background-color: rgb(44, 44, 44);
     .label{
-        text-align: center;
+        position: absolute;
+        top: 20px;
+        left: 80px;
+        padding: 5px 15px;
+        border-radius: 0px 10px 10px 0;
+        border-left: 10px solid rgb(234, 30, 30);
+        text-align: start;
+        background-color: rgb(141, 243, 101) ;
         font-size: 3rem;
-        color:#ff0000;
-        text-shadow: 0px 0px 20px #ffb1b1;
+        color:#232323;
+        text-shadow: 0px 0px 30px #29479f61;
     }
     .container{
         padding: 20px 20px 30px 20px;
         margin: auto;
+        margin-top: 3rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+        // border-radius: 25px;
         width: 1400px;
         height: 100%;
-        background-color: aqua;
+        background-color:rgba(255, 255, 255, 0.6);
         .card{
             margin: 15px 0 10px 0;
             min-width: calc(100% / 3 - 50px);

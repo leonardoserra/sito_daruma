@@ -64,6 +64,7 @@ export default {
             }
         }
         .title{
+            color: #2a2a2a;
             text-align: center;
             width: calc(100% / 3);
             align-self: center;
