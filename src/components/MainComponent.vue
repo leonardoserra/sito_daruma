@@ -67,7 +67,7 @@ main{
         border-left: 10px solid rgb(234, 30, 30);
         text-align: start;
         background-color: rgb(141, 243, 101) ;
-        font-size: 3rem;
+        font-size: 2rem;
         color:#232323;
         text-shadow: 0px 0px 30px #29479f61;
     }
@@ -78,8 +78,10 @@ main{
         display: grid;
         grid-template-columns: repeat(3 ,minmax(200px, 1fr));
         width: 1400px;
+        min-width: 500px;
         height: 100%;
         background-color:rgba(255, 255, 255, 0.6);
+        
         .card{
             margin: 15px 0 10px 0;
             text-align: center;
@@ -107,4 +109,32 @@ main{
         }
     }
 }
+@media all and (max-width: 1300px) {
+    main .container{
+       
+        grid-template-columns:repeat(2, minmax(200px, 1fr));
+        width: 900px;
+        min-width: 400px;
+        .card{
+            margin: auto;
+            min-width: 300px;
+        }
+
+    }
+}
+@media all and (max-width: 810px) {
+    main .container{
+        display: block;
+        grid-template-columns:none;
+        padding: 0;
+        width: 400px;
+        min-width: 300px;
+        .card{
+            margin: auto;
+            min-width: 300px;
+        }
+
+    }
+}
+
 </style>
