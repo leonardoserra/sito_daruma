@@ -30,16 +30,18 @@ export default{
            </h1>
             <div v-if="artistAlbums" class="container">
                 <div v-for="(album,index) in artistAlbums.items" :key="index" class="card">
+                    <!-- <template v-if="album.total_tracks > 1 && album.artists[0].name === 'Daruma'"> -->
                         <a class="link" :href="album.external_urls.spotify" target="_blank">
                             <h4 class="name">
                                 {{ album.name }}
                             </h4>
                             <img class="image" :src="album.images[1].url" :alt="album.name +' image'">
                         </a>
+                    <!-- </template> -->
                 </div>
             </div>
             <div v-else>
-            {{ albumMessageError }}
+                {{ albumMessageError }}
             </div>
         </section>
     </main>
@@ -58,7 +60,7 @@ main{
     background-color: rgb(44, 44, 44);
     .label{
         position: absolute;
-        top: 20px;
+        top: 8px;
         left: 80px;
         padding: 5px 15px;
         border-radius: 0px 10px 10px 0;
@@ -73,17 +75,13 @@ main{
         padding: 20px 20px 30px 20px;
         margin: auto;
         margin-top: 3rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        // border-radius: 25px;
+        display: grid;
+        grid-template-columns: repeat(3 ,minmax(200px, 1fr));
         width: 1400px;
         height: 100%;
         background-color:rgba(255, 255, 255, 0.6);
         .card{
             margin: 15px 0 10px 0;
-            min-width: calc(100% / 3 - 50px);
             text-align: center;
             .name{
                 height: 30px;
