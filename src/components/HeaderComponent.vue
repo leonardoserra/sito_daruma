@@ -38,17 +38,19 @@ export default {
         display: flex;
         justify-content: space-between;
         background-color:#1fdf64;  
+        //header height is subtracted from main height
         height: 110px;
         padding: 5px 10px;
         align-items: center;
         .img-frame{
+            padding-left: 15px;
             text-align: start;
             width: calc(100% / 3);
-            height: 100px;
+            height: 80px;
             img{
                 border-radius: 50%;
-                width: 100px;
-                height: 100px;
+                width: 80px;
+                height: 80px;
                 object-fit: cover;
                 box-shadow: 0px 0px #55ff93;
                 transition: all .8s ease-in-out; 
@@ -71,6 +73,7 @@ export default {
             text-transform: uppercase;
         }
         .followers{
+            padding-right: 15px;
             text-align: end;
             width: calc(100% / 3);
             font-size: 1.6rem;
