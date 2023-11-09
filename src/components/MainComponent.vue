@@ -80,7 +80,6 @@ main{
                 
                 &:hover{ 
                     font-size: 1.1rem;
-                    // transform: translateX(-10px);
                 }
             }
            .link{
@@ -88,11 +87,11 @@ main{
             }
            .image{
                 border-radius: 5px;
-                box-shadow: 0px 0px #191919;
-                transition: all .3s ease-in-out; 
+                box-shadow: 0px 0px #2a2a2a;
+                transition: all .2s ease-in-out; 
                 &:hover{ 
                     transform:translate(5px,-5px);
-                    box-shadow: -10px 10px #191919;
+                    box-shadow: -10px 10px #2a2a2a;
                 }
             }
         }

@@ -9,18 +9,22 @@ export default {
 
 <template>
     <header class="header">
-        <div v-if="artistInfo" class="title">
-            {{ artistInfo.type }}<br/>
-            {{ artistInfo.name }}
-        </div>
-        <div v-else>
-            ARTIST
-        </div>
         <div v-if="artistInfo" class="img-frame">
             <a :href="artistInfo.external_urls.spotify" target="_blank">
                 <img :src="artistInfo.images[2].url">
             </a>
         </div>
+        <div v-if="artistInfo" class="title">
+            <span>
+                {{ artistInfo.name }}
+            </span>
+        </div>
+        <div v-if="artistInfo" class="followers">
+            <span class="content">
+                &hearts; {{  artistInfo.followers.total  }}
+            </span>
+        </div>
+        
     </header>
 </template>
 
@@ -36,21 +40,15 @@ export default {
         background-color:#1fdf64;  
         height: 110px;
         padding: 5px 10px;
-        .title{
-            align-self: center;
-            padding: 0 5px 0 5px;
-            font-size: 2rem;
-            text-transform: uppercase;
-        }
+        align-items: center;
         .img-frame{
-            align-self: center;
-            width: 100px;
+            text-align: start;
+            width: calc(100% / 3);
             height: 100px;
-            
             img{
                 border-radius: 50%;
-                width: 100%;
-                height: 100%;
+                width: 100px;
+                height: 100px;
                 object-fit: cover;
                 box-shadow: 0px 0px #55ff93;
                 transition: all .8s ease-in-out; 
@@ -62,6 +60,26 @@ export default {
                     transform: rotateY( -360deg );
                 }
             }
+        }
+        .title{
+            text-align: center;
+            width: calc(100% / 3);
+            align-self: center;
+            padding: 0 5px 0 5px;
+            font-size: 4rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .followers{
+            text-align: end;
+            width: calc(100% / 3);
+            font-size: 1.6rem;
+        }
+
+        .content{
+            border-radius: 10px;
+            background-color: rgb(229, 255, 127);
+            padding: 10px 20px;
         }
     }
 </style>
