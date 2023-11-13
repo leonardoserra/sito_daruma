@@ -1,7 +1,7 @@
-# Vue 3 + Vite
+# Daruma Web Site
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+- This is a web site made for myself using Spotify API rendering my artist page using Vue.js
+- It is possible to play music and to navigate directly to the spotify link
+- It is a responsive web-site so it works for smaller screens also
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+  ![screenshot](/website_img.png)
