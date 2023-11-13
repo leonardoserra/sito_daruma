@@ -126,7 +126,11 @@ main{
     }
 }
 @media all and (max-width: 1300px) {
-    main .container{
+    main {
+        height: calc(100vh - 70px);
+        margin-top: 70px;
+        
+        .container{
        
         grid-template-columns:repeat(2, minmax(200px, 1fr));
         width: 900px;
@@ -137,6 +141,7 @@ main{
         }
 
     }
+}
 }
 @media all and (max-width: 810px) {
     main .container{

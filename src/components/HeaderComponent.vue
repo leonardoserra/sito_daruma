@@ -86,4 +86,43 @@ export default {
             padding: 10px 20px;
         }
     }
+
+@media all and (max-width: 1300px) { 
+    .header{
+        height: 70px;
+        .img-frame{
+            height: 50px;
+            img{
+                width: 50px;
+                height: 50px;
+            }
+        }
+        .title{
+            font-size: 2rem;
+        }
+        .followers{
+            padding-right: 10px;
+            font-size: 1rem;
+        }
+
+        .content{
+            padding: 8px 16px;
+        }
+    }
+}
+
+@media all and (max-width: 810px) {
+    main .container{
+        display: block;
+        grid-template-columns:none;
+        padding: 0;
+        width: 400px;
+        min-width: 300px;
+        .card{
+            margin: auto;
+            min-width: 300px;
+        }
+
+    }
+}
 </style>
