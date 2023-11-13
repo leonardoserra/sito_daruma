@@ -21,6 +21,7 @@ export default {
         </div>
         <div v-if="artistInfo" class="followers">
             <span class="content">
+                <span class="followers-label">Followers</span>
                 &hearts; {{  artistInfo.followers.total  }}
             </span>
         </div>
@@ -38,8 +39,9 @@ export default {
         display: flex;
         justify-content: space-between;
         background-color:#1fdf64;  
+        
         //header height is subtracted from main height
-        height: 110px;
+        height: 90px;
         padding: 5px 10px;
         align-items: center;
         .img-frame{
@@ -69,7 +71,7 @@ export default {
             width: calc(100% / 3);
             align-self: center;
             padding: 0 5px 0 5px;
-            font-size: 4rem;
+            font-size: 2.5rem;
             font-weight: 600;
             text-transform: uppercase;
         }
@@ -78,19 +80,29 @@ export default {
             text-align: end;
             width: calc(100% / 3);
             font-size: 1.6rem;
+            .content{
+                position: relative;
+                border-radius: 10px;
+                background-color: rgb(229, 255, 127);
+                padding: 10px 20px;
+                .followers-label{
+                    position: absolute;
+                    top: 0px;
+                    left: 50%;
+                    transform: translate(-50%);
+                    font-size: 0.7rem;
+                }
+            }
         }
-
-        .content{
-            border-radius: 10px;
-            background-color: rgb(229, 255, 127);
-            padding: 10px 20px;
-        }
+        
     }
 
-@media all and (max-width: 1300px) { 
+@media all and (max-width: 1400px) { 
     .header{
         height: 70px;
+        border-bottom: #2a2a2a 5px solid;
         .img-frame{
+            padding-left: 10px;
             height: 50px;
             img{
                 width: 50px;
@@ -102,27 +114,19 @@ export default {
         }
         .followers{
             padding-right: 10px;
-            font-size: 1rem;
+            font-size: 0.8rem;
+            .content{
+                padding: 8px 16px;
+                .followers-label{
+                   display: none;
+                }
+            }
         }
 
-        .content{
-            padding: 8px 16px;
-        }
     }
 }
 
-@media all and (max-width: 810px) {
-    main .container{
-        display: block;
-        grid-template-columns:none;
-        padding: 0;
-        width: 400px;
-        min-width: 300px;
-        .card{
-            margin: auto;
-            min-width: 300px;
-        }
-
-    }
+@media all and (max-width: 900px) {
+ 
 }
 </style>

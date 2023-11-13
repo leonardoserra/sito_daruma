@@ -30,7 +30,7 @@ export default{
             <h1 >
                 <em>
                     <span class="label">
-                        Album
+                        Discography
                     </span>
                 </em>
            </h1>
@@ -64,8 +64,8 @@ main::-webkit-scrollbar {
 
 main{
     position: relative;
-    height: calc(100vh - 110px);
-    margin-top: 110px;
+    height: calc(100vh - 90px);
+    margin-top: 90px;
     overflow-y: scroll;
     background-color: rgb(44, 44, 44);
     .label{
@@ -125,11 +125,18 @@ main{
         }
     }
 }
-@media all and (max-width: 1300px) {
+@media all and (max-width: 1400px) {
     main {
         height: calc(100vh - 70px);
         margin-top: 70px;
-        
+        .label{
+            top:15px;
+            left: 80px;
+            padding: 3px 7px;
+            font-size: 1.9rem;
+            border-left: 5px solid rgb(234, 30, 30);
+
+        }
         .container{
        
         grid-template-columns:repeat(2, minmax(200px, 1fr));
@@ -143,18 +150,26 @@ main{
     }
 }
 }
-@media all and (max-width: 810px) {
-    main .container{
-        display: block;
-        grid-template-columns:none;
-        padding: 0;
-        width: 400px;
-        min-width: 300px;
-        .card{
-            margin: auto;
-            min-width: 300px;
+@media all and (max-width: 900px) {
+    main{
+        .label{
+            top:25px;
+            left: 45px;
+            padding: 3px 7px;
+            font-size: 1.3rem;
         }
+        .container{
+            display: block;
+            grid-template-columns:none;
+            padding: 0;
+            width: 400px;
+            min-width: 300px;
+            .card{
+                margin: auto;
+                min-width: 300px;
+            }
 
+        }
     }
 }
 
