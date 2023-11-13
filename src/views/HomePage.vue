@@ -74,9 +74,11 @@ MainComponent
                     "Authorization": `Bearer ${this.token}`
                 }
             }).catch(error=>{
+                //DEBUG
                 console.log(error.message);
                 return error.message;
             }).then(response=>{
+                //DEBUG
                 console.log("ALBUM");
                 console.log(response.data);
                 this.artistAlbums = response.data;
