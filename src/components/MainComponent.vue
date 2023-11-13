@@ -13,6 +13,12 @@ export default{
         artistInfo : Object,
         artistAlbums : Object,
         artistId: String
+    },
+    methods:{
+         getEmbeddedItemLink(item){
+            const id = item.id;
+            return `https://open.spotify.com/embed/album/${id}?utm_source=generator`;
+        }
     }
    
 }
@@ -35,9 +41,13 @@ export default{
                             <h4 class="name">
                                 {{ album.name }}
                             </h4>
-                            <img class="image" :src="album.images[1].url" :alt="album.name +' image'">
+                            <img class="image" :src="album.images[1].url" :alt="album.name +' image'" loading="lazy">
                         </a>
+
+                        <!-- embedding music -->
+                            <iframe class="player" style="border-radius:12px" :src="getEmbeddedItemLink(album)"  frameBorder="0"  allow=" clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     <!-- </template> -->
+             
                 </div>
             </div>
             <div v-else>
@@ -77,6 +87,7 @@ main{
         margin-top: 3rem;
         display: grid;
         grid-template-columns: repeat(3 ,minmax(200px, 1fr));
+        gap:5px;
         width: 1400px;
         min-width: 500px;
         height: 100%;
@@ -105,6 +116,11 @@ main{
                     transform:translate(5px,-5px);
                     box-shadow: -10px 10px #2a2a2a;
                 }
+            }
+            .player{
+                margin-top: 10px;
+                width: 70%;
+                height: 152px;
             }
         }
     }
