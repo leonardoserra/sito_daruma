@@ -16,7 +16,7 @@ MainComponent
             artistAlbums: null,
             artistInfo: null,
             artistErrorMessage: "",
-            albumsErrorMessage: ""
+            albumsErrorMessage: "",
         }
     },
     components:{
@@ -84,6 +84,7 @@ MainComponent
         }
     },
     mounted(){
+        console.log(process.env.CLIENT_ID);
         this.getArtistInfo();
         this.getArtistAlbums();
     }
