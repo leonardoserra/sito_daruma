@@ -84,7 +84,6 @@ MainComponent
         }
     },
     mounted(){
-        console.log(process.env.CLIENT_ID);
         this.getArtistInfo();
         this.getArtistAlbums();
     }
