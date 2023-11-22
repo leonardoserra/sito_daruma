@@ -110,7 +110,7 @@ export default {
             }
         }
         .title{
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
         .followers{
             padding-right: 10px;
@@ -127,6 +127,13 @@ export default {
 }
 
 @media all and (max-width: 900px) {
- 
+    .header{
+        
+        .title{
+            font-size: 1.2rem;
+        }
+        
+
+    }
 }
 </style>
