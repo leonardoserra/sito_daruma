@@ -11,7 +11,11 @@ MainComponent
     data() {
         return {
             store,
+            //daruma
             artistId: "6zUJZaqND4ZduOsIXRH8Sb",
+            //bill evans
+            // artistId: "4jXfFzeP66Zy67HM2mvIIF",
+
             token: null,
             artistAlbums: null,
             artistInfo: null,
