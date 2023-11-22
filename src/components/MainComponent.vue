@@ -100,6 +100,7 @@ main{
                 height: 30px;
                 transition: all .3s ease-in-out;
                 color: black; 
+                margin-bottom: 15px;
                 
                 &:hover{ 
                     font-size: 1.1rem;
