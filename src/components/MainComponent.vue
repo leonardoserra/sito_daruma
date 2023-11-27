@@ -1,5 +1,4 @@
 <script>
-// import {apiMethods} from '../methods.js';
 export default{
     name:'MainComponent',
     data(){
